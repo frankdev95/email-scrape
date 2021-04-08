@@ -1,0 +1,33 @@
+{
+  "name": "LinkedIn Scraper",
+  "description": "Receive business emails from linkedin.",
+  "version": "1.0.0",
+  "manifest_version": 2,
+  "background": {
+    "scripts": [
+      "ext/background/storage.js",
+      "ext/background/router.js",
+      "ext/background/background.js"
+    ]
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "*://www.linkedin.com/*"
+      ],
+      "js": [
+        "ext/content/url_listener.js"
+      ],
+      "css": [
+        "css/style.css"
+      ]
+    }
+  ],
+  "permissions": [
+    "storage",
+    "webRequest",
+    "tabs",
+    "*://www.linkedin.com/*"
+  ]
+
+}
